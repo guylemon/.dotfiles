@@ -8,4 +8,4 @@ set -e
 # Open the note in a new tmux window at the last line.
 # Note: When you quit vim, it will close the new window
 # automatically.
-vim + /home/me/.notes_fleeting
+vim + /Users/glemon/fleeting_notes

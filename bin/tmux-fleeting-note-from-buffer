@@ -7,7 +7,7 @@ set -e
 
 # Append an item to the FLEETING_NOTES file.
 # Include the most recent tmux paste buffer contents
-cat << EOF >> /home/me/.notes_fleeting
+cat << EOF >> /Users/glemon/fleeting_notes
 
 ----
 $(date -u +%Y-%m-%d-%H-%M-%S)-UTC
@@ -26,4 +26,4 @@ EOF
 # Open the note in a new tmux window at the last line.
 # Note: When you quit vim, it will close the new window
 # automatically.
-vim + /home/me/.notes_fleeting
+vim + /Users/glemon/fleeting_notes

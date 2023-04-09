@@ -5,11 +5,11 @@ case $- in
 esac
 
 # Path to your oh-my-bash installation.
-export OSH='/home/me/.oh-my-bash'
+export OSH="$HOME/.oh-my-bash"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
-OSH_THEME="powerline-multiline"
+OSH_THEME="duru"
 
 # Uncomment the following line to use case-sensitive completion.
 # OMB_CASE_SENSITIVE="true"
@@ -123,15 +123,20 @@ source "$OSH"/oh-my-bash.sh
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
 #
+# TODO wrap in conditional
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
 export PATH="~/.dotfiles/bin:$PATH"
 export EDITOR="vim"
 export FLEETING_NOTES="$HOME/.notes_fleeting"
 
 # FZF
-source /usr/share/fzf/key-bindings.bash
+# TODO: Use conditional to block this line on Apple laptop
+# source /usr/share/fzf/key-bindings.bash
 
 # Aliases
 source ~/.bash_aliases
 
 # NOTES
 export FLEETING_NOTES="$HOME/fleeting_notes"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

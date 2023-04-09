@@ -2,7 +2,7 @@
 # -book: start with bookmarks page
 # -editor: specify editor
 # 2> /dev/null: suppress warning about user-agent string
-/usr/bin/lynx \
+/opt/homebrew/bin/lynx \
 	-cfg ~/.dotfiles/lynx/lynx.cfg \
 	-lss ~/.dotfiles/lynx/lynx.lss \
 	-editor="$(which vim)" \

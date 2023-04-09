@@ -215,8 +215,9 @@ endif
 
 " vim: set fenc=utf-8 tw=80 sw=2 sts=2 et foldmethod=marker :
 
-" habamax colorscheme
-colorscheme habamax
+" solarized
+" git clone https://github.com/altercation/vim-colors-solarized
+colorscheme solarized
 
 " always show signcolumns
 set signcolumn=yes
@@ -249,6 +250,7 @@ nmap <Leader>l :bn<cr>
   nmap <Leader>ee :Ex<cr>
 
   " FZF mappings
+  set rtp+=/opt/homebrew/opt/fzf
   nnoremap <leader>ff :Files<cr>
   nnoremap <leader>gg :GFiles<cr>
   nnoremap <leader>bb :Buffers<cr>
@@ -267,6 +269,9 @@ nmap <Leader>l :bn<cr>
 
   " Add status line support, for integration with other plugin, checkout `:h coc-status`
   set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+  " Apply the most preferred quickfix action to fix diagnostic on the current line
+  nmap <leader>qf  <Plug>(coc-fix-current)
 " }}}
 
 " {{{ STATUSLINE
@@ -276,4 +281,6 @@ nmap <Leader>l :bn<cr>
   if !has('gui_running')
     set t_Co=256
   endif
+
+  let g:lightline = { 'colorscheme': 'solarized' }
 " }}}
