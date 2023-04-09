@@ -1,0 +1,12 @@
+#!/bin/bash
+# This script assumes a locally running instance of kiwix
+# at localhost:8000, and that it serves wiktionary.zim.
+set -e
+
+# kiwix-search -s provides suggestions for inexact matches.
+# Search for matching wiktionary entries
+entry="$(/mnt/kiwix/kiwix-search -s /mnt/kiwix/archlinux.zim "$*" | fzf)"
+
+# Open the entry with lynx
+# NB: Parameter expansion used to replace spaces with underscore character.
+lynx "localhost:8000/archlinux/${entry// /_}"

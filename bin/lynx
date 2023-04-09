@@ -1,0 +1,12 @@
+#!/bin/bash
+# -book: start with bookmarks page
+# -editor: specify editor
+# 2> /dev/null: suppress warning about user-agent string
+/usr/bin/lynx \
+	-cfg ~/.dotfiles/lynx/lynx.cfg \
+	-lss ~/.dotfiles/lynx/lynx.lss \
+	-editor="$(which vim)" \
+	-useragent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36" \
+	"$@" \
+	2> /dev/null
+

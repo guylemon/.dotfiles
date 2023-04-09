@@ -1,0 +1,6 @@
+#!/bin/bash
+# Use tmux buffer contents to define a word or phrase
+
+echo "$date buffer: $(tmux show-buffer)" >> ~/log
+
+kiwix-search-wiktionary "$(tmux show-buffer)"

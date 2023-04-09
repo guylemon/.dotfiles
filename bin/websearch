@@ -1,0 +1,9 @@
+#!/bin/bash
+# Search the web from lynx browser.
+# Pull in urlencode functions
+set -e
+
+source ~/.dotfiles/functions/urlencode.bash
+
+# Search the web
+lynx "https://google.com/?q=$(urlencode "$*")"

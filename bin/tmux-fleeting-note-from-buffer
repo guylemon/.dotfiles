@@ -1,0 +1,29 @@
+#!/bin/bash
+# This script creates a fleeting note from the tmux paste buffer.
+# You must be running tmux and have the FLEETING_NOTES environment
+# variable defined.
+
+set -e
+
+# Append an item to the FLEETING_NOTES file.
+# Include the most recent tmux paste buffer contents
+cat << EOF >> /home/me/.notes_fleeting
+
+----
+$(date -u +%Y-%m-%d-%H-%M-%S)-UTC
+
+TAGS:
+@no-tag
+
+SOURCE:
+$(tmux show-buffer)
+
+NOTE:
+<start editing here>
+EOF
+
+
+# Open the note in a new tmux window at the last line.
+# Note: When you quit vim, it will close the new window
+# automatically.
+vim + /home/me/.notes_fleeting

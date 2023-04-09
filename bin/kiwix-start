@@ -1,0 +1,6 @@
+#!/bin/bash
+# Start kiwix instance
+doas -u kiwix /mnt/kiwix/kiwix-serve \
+	--port=8000 \
+	--blockexternal \
+	/mnt/kiwix/*.zim

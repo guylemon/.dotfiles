@@ -1,0 +1,10 @@
+#!/bin/bash
+# This script assumes a locally running instance of kiwix
+# at localhost:8000, and that it serves wiktionary.zim.
+set -e
+
+source ~/.dotfiles/functions/urlencode.bash
+
+# Open kiwix full text search with lynx. Stack overflow articles do not follow
+# a predictable url pattern.
+lynx "localhost:8000/search?content=stackoverflow&pattern=$(urlencode $@)"

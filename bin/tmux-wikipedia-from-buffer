@@ -1,0 +1,6 @@
+#!/bin/bash
+# Use tmux buffer contents to search wikipedia
+
+echo "$date buffer: $(tmux show-buffer)" >> ~/log
+
+kiwix-search-wikipedia "$(tmux show-buffer)"

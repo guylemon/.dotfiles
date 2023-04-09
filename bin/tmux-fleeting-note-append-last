@@ -1,0 +1,11 @@
+#!/bin/bash
+# This script opens the fleeting notes to append text 
+# to the last note.
+
+set -e
+
+# Append an item to the FLEETING_NOTES file.
+# Open the note in a new tmux window at the last line.
+# Note: When you quit vim, it will close the new window
+# automatically.
+vim + /home/me/.notes_fleeting

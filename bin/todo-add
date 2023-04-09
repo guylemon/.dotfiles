@@ -1,0 +1,16 @@
+#!/bin/bash
+# Add a todo item to the todo recutils db
+set -e 
+
+echo -n "Title: "
+read title;
+echo -n "Description: "
+read description;
+recins \
+	-t Todo \
+	-f DateCreatedAt -v "$(date)" \
+	-f Description -v "$description" \
+	-f Status -v "NEW" \
+	-f Title -v "$title" \
+	--verbose \
+	~/todo.rec

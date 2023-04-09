@@ -1,0 +1,9 @@
+#!/bin/bash
+# This script assumes a locally running instance of kiwix
+# at localhost:8000, and that it serves wiktionary.zim.
+set -e
+
+source ~/.dotfiles/functions/urlencode.bash
+
+# Search all offline kiwix wiki content
+lynx "localhost:8000/search?pattern=$(urlencode "$*")"
