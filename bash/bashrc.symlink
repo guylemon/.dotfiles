@@ -9,7 +9,7 @@ export OSH="$HOME/.oh-my-bash"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
-OSH_THEME="duru"
+OSH_THEME="powerline-multiline"
 
 # Uncomment the following line to use case-sensitive completion.
 # OMB_CASE_SENSITIVE="true"
@@ -124,7 +124,7 @@ source "$OSH"/oh-my-bash.sh
 # alias ohmybash="mate ~/.oh-my-bash"
 #
 # TODO wrap in conditional
-export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+export PATH="$HOME/global-npm-packages/bin:/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
 export PATH="~/.dotfiles/bin:$PATH"
 export EDITOR="vim"
 export FLEETING_NOTES="$HOME/.notes_fleeting"

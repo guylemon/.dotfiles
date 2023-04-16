@@ -4,3 +4,6 @@ alias la='ls -la'
 
 # Virtual assistant
 alias va='pushd ~/src/virtual-assistant && ./main.sh && popd'
+
+alias vim='nvim'
+alias vi='nvim'
