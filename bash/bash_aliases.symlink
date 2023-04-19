@@ -7,3 +7,10 @@ alias va='pushd ~/src/virtual-assistant && ./main.sh && popd'
 
 alias vim='nvim'
 alias vi='nvim'
+
+# Git
+alias gb='git branch'
+alias gbr='git branch -r'
+alias gco='git checkout'
+alias gcb='git checkout -b'
+alias grbi='git rebase -i'

@@ -1,0 +1,9 @@
+#!/bin/bash
+# Add a todo item from a tmux popup.
+set -e 
+
+# -E closes the popup automatically when the command finishes
+# popup dimensions: 4 lines high, 80 columns wide
+tmux display-popup -E -h 6 -w 80 \
+	"echo \"--- NEW LOG ENTRY ---\"; echo \"\"; $HOME/.dotfiles/bin/log-work.bash"
+
