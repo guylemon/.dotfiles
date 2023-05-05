@@ -40,7 +40,7 @@ tmux select-pane -t 1 && tmux send-keys \
 # and then start the ui-shell.
 # TODO use docker to check if the container exists before executing the command.
 tmux select-pane -t 2 && tmux send-keys \
-	'echo "Starting the ui shell in fifteen seconds..."; sleep 15; ./run-ui-shell.sh' C-m
+	'echo "Starting the ui shell in fifteen seconds..."; sleep 30; ./run-ui-shell.sh' C-m
 
 # Get back to the left-hand pane to run other commands if you wish.
 tmux select-pane -t 0

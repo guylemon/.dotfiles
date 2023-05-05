@@ -1,5 +1,6 @@
 alias emv='emerge --ask --verbose'
 alias ?='websearch'
+alias ls='ls --color'
 alias la='ls -la'
 
 # Virtual assistant
@@ -14,3 +15,4 @@ alias gbr='git branch -r'
 alias gco='git checkout'
 alias gcb='git checkout -b'
 alias grbi='git rebase -i'
+alias gss='git status'
