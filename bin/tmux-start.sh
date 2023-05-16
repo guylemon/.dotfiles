@@ -7,7 +7,6 @@ researchWindowName="main"
 
 workSessionName="WORK"
 workWindowName="main"
-# devEnvPath="${2:-$HOME/hsc/hsc.dev.env}"
 
 # TODO Ensure that the named session does not already exist.
 # if tmux list-windows | grep -q "$windowName"; then
@@ -31,10 +30,12 @@ tmux new-session \
 	-n "$workWindowName" \
 	-c "$HOME/hsc" \
 	-d 
-	# split-window -h -p 50 -c "$HOME" \; \
-	# split-window -h -p 50 -c "$HOME" \; \
-	# select-layout "even-vertical"
 
+# Create work session splits
+tmux split-window -t "$workSessionName:$workWindowName" -h -p 50 -c "$HOME/hsc" \; \
+	split-window -t "$workSessionName:$workWindowName" -h -p 50 -c "$HOME/hsc" \; \
+	select-layout -t "$workSessionName:$workWindowName" "even-horizontal" \; \
+	select-pane -t "$workSessionName:$workWindowName.1"
 
 # # Select the newly created window and run commands.
 # # in each pane
