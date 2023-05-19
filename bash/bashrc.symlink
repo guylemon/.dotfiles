@@ -1,3 +1,5 @@
+#  vim mode, obviously.
+set -o vi
 # Enable the subsequent settings only in interactive sessions
 case $- in
   *i*) ;;
@@ -140,3 +142,9 @@ source ~/.bash_aliases
 export FLEETING_NOTES="$HOME/fleeting_notes"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export SECRETS_GPG_COMMAND="/opt/homebrew/opt/gnupg@2.2/bin/gpg"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm use 19.9
