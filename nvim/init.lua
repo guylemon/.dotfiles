@@ -1,2 +1,1 @@
-require "me.options"
-require "me.keymaps"
+require("glemon")
