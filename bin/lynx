@@ -2,7 +2,17 @@
 # -book: start with bookmarks page
 # -editor: specify editor
 # 2> /dev/null: suppress warning about user-agent string
-/opt/homebrew/bin/lynx \
+
+# If lynx is not installed, exit with a descriptive message
+if ! command -v lynx &> /dev/null; then
+    echo "lynx is not installed. Please install it."
+    exit 1
+fi
+
+# Get the path to the system's lynx, omitting .dotfiles/bin.
+system_lynx=$(PATH=$(echo $PATH | sed 's|'$HOME'/.dotfiles/bin:||g') command -v lynx)
+
+$system_lynx \
 	-cfg ~/.dotfiles/lynx/lynx.cfg \
 	-lss ~/.dotfiles/lynx/lynx.lss \
 	-editor="$(which vim)" \
